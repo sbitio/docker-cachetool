@@ -13,7 +13,8 @@ WORKDIR ${TARGET_DIR}
 RUN cd ${TARGET_DIR} \
  && git clone ${REPOSITORY} . \
  && git checkout ${REF} \
- && composer install --no-dev --optimize-autoloader
+ && composer install --no-dev --optimize-autoloader \
+ && rm -rf .git*
 
 
 FROM php:7.4-cli-buster
