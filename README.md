@@ -58,7 +58,7 @@ You may want to build an image based on a fork or git reference:
 ```bash
 GIT_URL=https://github.com/gordalina/cachetool
 GIT_REF=5.0.0
-docker build . --build-arg REPOSITORY=$GIT_URL REF=$GIT_REF -t cachetool:<tag>
+docker build . --build-arg REPOSITORY=$GIT_URL --build-arg REF=$GIT_REF -t cachetool:<tag>
 ```
 
 
