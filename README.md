@@ -64,7 +64,7 @@ docker build . --build-arg REPOSITORY=$GIT_URL --build-arg REF=$GIT_REF -t cache
 
 ## Development
 
-Development happens on [GitHub](https://github.com/sbitio/puppet-monit).
+Development happens on [GitHub](https://github.com/sbitio/docker-cachetool).
 
 Please log issues for any bug report, feature or support request.
 
