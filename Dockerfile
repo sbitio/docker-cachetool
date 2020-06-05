@@ -29,5 +29,5 @@ ENV PATH=$PATH:$TARGET_DIR/bin
 
 COPY --from=builder ${TARGET_DIR} ${TARGET_DIR}
 
-#Not using entry ENTRYPOINT for backwards compatibility
-CMD [ "cachetool", "help" ]
+ENTRYPOINT [ "/opt/cachetool/bin/cachetool" ]
+CMD [ "list" ]
