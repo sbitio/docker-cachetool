@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Use a tag prefix for builds not using master branch
+TAG_PREFIX=''
+if [ "$SOURCE_BRANCH" != 'master' ]; then
+  TAG_PREFIX="$SOURCE_BRANCH-"
+fi
+
+for tag in $(curl -s "https://api.github.com/repos/gordalina/cachetool/git/refs/tags" \
+              | grep '"ref":' \
+              | sed 's/.*tags\///' \
+              | sed 's/".*//' \
+              | sort -V); do
+  docker build --cache-from $IMAGE_NAME --build-arg REF=$tag -f $DOCKERFILE_PATH -t $DOCKER_REPO:$TAG_PREFIX$tag .
+  docker push $DOCKER_REPO:$TAG_PREFIX$tag
+done
+
+# Make latest actually shown as newest on dockerhub's interface
+docker push $IMAGE_NAME
