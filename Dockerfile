@@ -11,8 +11,9 @@ ARG TARGET_DIR
 WORKDIR ${TARGET_DIR}
 
 RUN cd ${TARGET_DIR} \
- && git clone ${REPOSITORY} . \
- && git checkout ${REF} \
+ && git clone ${REPOSITORY} .
+ 
+RUN git checkout ${REF} \
  && composer install --no-dev --optimize-autoloader \
  && rm -rf .git*
 
