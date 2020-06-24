@@ -1,5 +1,5 @@
 ARG REPOSITORY=https://github.com/gordalina/cachetool.git
-ARG REF=5.0.0
+ARG REF=5.1.1
 ARG TARGET_DIR=/opt/cachetool
 
 FROM composer:latest AS builder
@@ -12,7 +12,7 @@ WORKDIR ${TARGET_DIR}
 
 RUN cd ${TARGET_DIR} \
  && git clone ${REPOSITORY} .
- 
+
 RUN git checkout ${REF} \
  && composer install --no-dev --optimize-autoloader \
  && rm -rf .git*
