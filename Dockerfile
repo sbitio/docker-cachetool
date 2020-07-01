@@ -1,5 +1,5 @@
 ARG REPOSITORY=https://github.com/gordalina/cachetool.git
-ARG REF=5.1.1
+ARG REF=5.1.3
 ARG TARGET_DIR=/opt/cachetool
 
 FROM composer:latest AS builder
