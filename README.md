@@ -1,3 +1,9 @@
+# Archived
+
+This repository was useful at a time when [gordalina/cachetool](https://github.com/gordalina/cachetool) didn't provide a docker image. It 's no longer the case, so we've archived it.
+
+---
+
 # docker-cachetool
 [![DockerHub Badge](http://dockeri.co/image/sbitio/cachetool)](https://hub.docker.com/r/sbitio/cachetool/)
 
